@@ -2,10 +2,6 @@
   <nav>
     <v-app-bar app color="red darken-4">
       <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
-      <v-spacer></v-spacer>
-      <v-btn icon>
-        <v-icon>mdi-magnify</v-icon>
-      </v-btn>
     </v-app-bar>
     <v-navigation-drawer v-model="drawer" app temporary class="grey darken-4">
       <v-list>

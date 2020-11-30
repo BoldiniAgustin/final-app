@@ -107,7 +107,7 @@ export default {
       const response = await fetch(`http://localhost:3000/games/${id}`);
       const game = await response.json();
       this.game = game;
-      if (game.stock > 0) {
+      if (game.stock) {
         this.stock = true;
       } else {
         this.stock = false;

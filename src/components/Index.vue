@@ -2,13 +2,11 @@
   <v-container>
     <v-row class="text-center">
       <v-col cols="12">
-        <v-img
-          :src="require('../assets/GameStop.png')"
-          class="my-3"
-          contain
-          height="100"
-        />
-        <h2>Welcome to GameStop</h2>
+        <div style="padding-bottom: 0%; position: relative">
+          <v-img src=https://i.imgur.com/6387aXl.jpg />
+        </div>
+
+        <h2>Welcome to GameStart</h2>
         <p>The place where gaming begins</p>
       </v-col>
 

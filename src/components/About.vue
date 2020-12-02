@@ -22,10 +22,11 @@
 
       <v-footer padless fixed>
         <v-card flat tile width="100%">
-          <v-card-text>
+          <v-card-text class="d-flex justify-center">
             <a
               target="_blank"
               href="https://github.com/BoldiniAgustin/final-app"
+              class="github-link"
             >
               <v-btn>
                 <v-icon class="pr-1">mdi-thumb-up-outline</v-icon>
@@ -47,5 +48,8 @@ export default {};
 .center {
   left: 15%;
   right: 15%;
+}
+.github-link {
+  text-decoration: none;
 }
 </style>

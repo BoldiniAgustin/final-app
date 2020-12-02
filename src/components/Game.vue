@@ -1,5 +1,5 @@
 <template>
-  <v-container class="container">
+  <v-container class="container" v-if="game">
     <v-col cols="12" class="container">
       <div style="padding-bottom: 0%; position: relative">
         <v-img :src="game.img" />
@@ -65,8 +65,6 @@
           <v-carousel class="carousel" hide-delimiters>
             <v-carousel-item
               class="c-item"
-              extends
-              v-img
               position="center"
               v-for="img in game.carousel"
               :key="img"
@@ -98,7 +96,7 @@ export default {
   name: 'Game',
   data: () => ({
     fetched: false,
-    game: [],
+    game: null,
     availability: null,
   }),
   methods: {

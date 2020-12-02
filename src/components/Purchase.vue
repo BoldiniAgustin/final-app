@@ -26,7 +26,7 @@
 
       <v-card-actions>
         <v-spacer></v-spacer>
-        <v-btn color="red darken-4" text>
+        <v-btn color="red darken-4" text @click="confirm">
           Confirm
         </v-btn>
       </v-card-actions>
@@ -49,6 +49,10 @@ export default {
     create() {
       this.price = this.items.reduce((acc, el) => acc + el.price, 0);
       this.title = this.items.map(item => item.title);
+    },
+    confirm() {
+      this.dialog = false;
+      this.$emit('clearCart');
     },
   },
 };

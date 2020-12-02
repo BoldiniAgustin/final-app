@@ -22,7 +22,7 @@
     <v-footer padless fixed>
       <v-card flat tile width="100%">
         <v-card-text>
-          <Purchase :items="games" />
+          <Purchase :items="games" @clearCart="clearCart" />
         </v-card-text>
       </v-card>
     </v-footer>
@@ -58,6 +58,10 @@ export default {
       const newCart = cart.filter(x => x !== id);
       this.games = this.games.filter(x => x.id !== id);
       localStorage.setItem('weebstore-cart', JSON.stringify(newCart));
+    },
+    clearCart() {
+      this.games = [];
+      localStorage.setItem('weebstore-cart', JSON.stringify([]));
     },
   },
   created() {

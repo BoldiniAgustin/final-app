@@ -41,7 +41,7 @@
             <v-snackbar v-model="snackbar" timeout="1000">
               <template class="snacc">
                 <span class="tab">{{ cont }} {{ text }}</span>
-                <v-icon v-if="inCart"> mdi-close </v-icon>
+                <v-icon v-if="inCart">mdi-close</v-icon>
                 <v-icon v-else> mdi-check</v-icon>
               </template>
             </v-snackbar>
@@ -72,7 +72,7 @@ export default {
       } else {
         if (this.available) {
           this.text = 'succesfully added to cart.';
-          this.inCart = true;
+          this.inCart = false;
           this.cart.push(game.id);
           localStorage.setItem('weebstore-cart', JSON.stringify(this.cart));
         } else {

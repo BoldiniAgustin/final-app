@@ -11,11 +11,11 @@ import About from './components/About.vue';
 Vue.use(VueRouter);
 
 const routes = [
-  { path: '/', component: Home },
-  { path: '/shop', component: Shop },
-  { path: '/game/:id', component: Game },
-  { path: '/cart', component: Cart},
-  {path:"/about", component: About}
+  { name: 'home', path: '/', component: Home },
+  { name: 'shop', path: '/shop', component: Shop },
+  { name: 'game', path: '/game/:id', component: Game },
+  { name: 'card', path: '/cart', component: Cart },
+  { name: 'about', path: '/about', component: About },
 ];
 
 const router = new VueRouter({

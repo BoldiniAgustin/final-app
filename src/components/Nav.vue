@@ -9,7 +9,7 @@
           link
           v-for="(tab, index) in tabs"
           :key="index"
-          @click="$router.push(tab.route)"
+          :to="tab.route"
         >
           <v-list-item-icon>
             <v-icon>{{ tab.icon }}</v-icon>

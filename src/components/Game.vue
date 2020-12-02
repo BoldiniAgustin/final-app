@@ -28,7 +28,7 @@
               <v-icon>mdi-currency-usd</v-icon>
               {{ game.price }}
             </v-chip>
-            <div v-if="stock">
+            <div v-if="availability">
               <v-chip color="green">
                 <v-icon>mdi-check</v-icon>
                 Available
@@ -99,18 +99,18 @@ export default {
   data: () => ({
     fetched: false,
     game: [],
-    stock: null,
+    availability: null,
   }),
   methods: {
     async fetchData() {
       const { id } = this.$route.params;
-      const response = await fetch(`http://localhost:3000/games/${id}`);
+      const response = await fetch(`http://192.168.1.69:3000/games/${id}`);
       const game = await response.json();
       this.game = game;
-      if (game.stock) {
-        this.stock = true;
+      if (game.availability) {
+        this.availability = true;
       } else {
-        this.stock = false;
+        this.availability = false;
       }
     },
   },

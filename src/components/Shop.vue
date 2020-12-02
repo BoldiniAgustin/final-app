@@ -64,18 +64,24 @@ export default {
     snacc: function(game) {
       this.snackbar = true;
       this.cont = game.title;
+      this.available = game.availability;
+
       if (this.cart.includes(game.id)) {
         this.text = 'already in cart.';
         this.inCart = true;
       } else {
-        this.text = 'succesfully added to cart.';
-        this.inCart = false;
-        this.cart.push(game.id);
-        localStorage.setItem('weebstore-cart', JSON.stringify(this.cart));
+        if (this.available) {
+          this.text = 'succesfully added to cart.';
+          this.inCart = true;
+          this.cart.push(game.id);
+          localStorage.setItem('weebstore-cart', JSON.stringify(this.cart));
+        } else {
+          this.text = 'is not available';
+        }
       }
     },
     async fetchData() {
-      const response = await fetch('http://localhost:3000/games');
+      const response = await fetch('http://192.168.1.69:3000/games');
       const games = await response.json();
       this.games = games;
       this.fetched = true;
@@ -98,6 +104,7 @@ export default {
     games: null,
     tags: null,
     inCart: true,
+    available: false,
   }),
 };
 </script>

@@ -23,10 +23,15 @@
       <v-footer padless fixed>
         <v-card flat tile width="100%">
           <v-card-text>
-            <v-btn>
-              <v-icon class="pr-1">mdi-thumb-up-outline</v-icon>
-              Check out our GitHub repo!
-            </v-btn>
+            <a
+              target="_blank"
+              href="https://github.com/BoldiniAgustin/final-app"
+            >
+              <v-btn>
+                <v-icon class="pr-1">mdi-thumb-up-outline</v-icon>
+                Check out our GitHub repo!
+              </v-btn>
+            </a>
           </v-card-text>
         </v-card>
       </v-footer>
